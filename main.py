@@ -1,10 +1,10 @@
 #import requests
 #from pyrogram import Client
 
-api_id = 24509589
-api_hash = "717cf21d94c4934bcbe1eaa1ad86ae75"
+api_id = 10337096
+api_hash = "44eb4f665fe6c15824c5b469d1111424"
 bot_token = " BOT TOKEN"
-owner_id = 7427691214
+owner_id = 7196525260
 
 def charge_card(cc_info):
     url = "https://daxxteam.com/chk/api.php"
