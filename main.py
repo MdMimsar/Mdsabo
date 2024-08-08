@@ -1,9 +1,9 @@
-#import requests
-#from pyrogram import Client
+import requests
+from pyrogram import Client
 
 api_id = 10337096
 api_hash = "44eb4f665fe6c15824c5b469d1111424"
-bot_token = " BOT TOKEN"
+bot_token = "7409887822:AAHCzvu4htx3tHvtV2mRn4t6r_IIzzVKyeg"
 owner_id = 7196525260
 
 def charge_card(cc_info):
