@@ -1,5 +1,5 @@
 #import requests
-from pyrogram import Client
+#from pyrogram import Client
 
 api_id = 10337096
 api_hash = "44eb4f665fe6c15824c5b469d1111424"
