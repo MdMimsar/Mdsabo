@@ -1,4 +1,4 @@
-import requests
+#import requests
 from pyrogram import Client
 
 api_id = 10337096
